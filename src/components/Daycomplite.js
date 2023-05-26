@@ -1,11 +1,9 @@
-import { useGetImageQuery,useUpdateImageMutation,useGetUQuery,useDaycomplitedMutation } from '../services/imaagequery'
+import { useGetUQuery,useDaycomplitedMutation } from '../services/imaagequery'
 
 const Daycomplite=({userid})=> {
 
-    // const { data, error, isLoading } = useGetImageQuery()
-    // const [updatePost, { isUpdating }] = useUpdateImageMutation()
     const { data, error, isLoading } = useGetUQuery(userid)
-    const [updatePost, { isUpdating }] = useDaycomplitedMutation()
+    const [updatePost] = useDaycomplitedMutation()
   
     const mclick=(id,selectedday,dayn)=>{
      updatePost({id:id,selectedday:selectedday,dayn:dayn})
